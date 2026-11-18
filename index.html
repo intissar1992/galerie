@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'Art Interactive — Art Institute of Chicago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="hero-header">
+        <div class="container">
+            <span class="badge-binome">Projet Binôme CDA • MESTIRI Intissar & BEN TMELIST Moataza</span>
+            <h1>🏛️ Galerie d'Art Numérique</h1>
+            <p class="subtitle">Explorez les collections de l'<strong>Art Institute of Chicago</strong> par artiste,
+                mouvement ou thème.</p>
+
+            <!-- Barre de recherche -->
+            <form id="search-form" class="search-bar">
+                <input type="text" id="search-input"
+                    placeholder="Rechercher un artiste ou un thème (ex: Monet, Van Gogh, Paris, Japon...)" required>
+                <button type="submit">🔍 Rechercher</button>
+            </form>
+
+            <!-- Filtres rapides cliquables -->
+            <div class="quick-tags">
+                <span>Suggestions :</span>
+                <button type="button" class="tag-btn active" data-query="Impressionism"
+                    data-label="Impressionnisme">Impressionnisme</button>
+                <button type="button" class="tag-btn" data-query="Van Gogh" data-label="Vincent van Gogh">Vincent van
+                    Gogh</button>
+                <button type="button" class="tag-btn" data-query="Claude Monet" data-label="Claude Monet">Claude
+                    Monet</button>
+                <button type="button" class="tag-btn" data-query="Japanese woodblock"
+                    data-label="Estampes Japonaises">Estampes Japonaises</button>
+                <button type="button" class="tag-btn" data-query="Sculpture" data-label="Sculptures">Sculptures</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Titre dynamique qui change selon le clic -->
+        <h2 id="galerie-heading"
+            style="font-family: 'Playfair Display', serif; font-size: 1.8rem; text-align: center; margin-bottom: 0.4rem;">
+            Collection : Impressionnisme
+        </h2>
+
+        <!-- Zone d'état / chargement -->
+        <div id="status-message" class="status-message"></div>
+
+        <!-- Grille de la galerie -->
+        <section id="galerie-grid" class="galerie-grid" aria-live="polite"></section>
+    </main>
+
+    <!-- Fenêtre modale détail au clic -->
+    <div id="modal-detail" class="modal-overlay hidden" role="dialog" aria-modal="true">
+        <div class="modal-card">
+            <button id="close-modal" class="close-btn" aria-label="Fermer">✕</button>
+            <div id="modal-content" class="modal-body"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Données & Images Open Access fournies par l'API publique de l'<strong>Art Institute of Chicago</strong> •
+            Réalisé par MESTIRI Intissar & BEN TMELIST Moataza</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
